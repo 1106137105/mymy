@@ -1,0 +1,6 @@
+framework module Pods_friday_fridayUITests {
+  umbrella header "Pods-friday-fridayUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
