@@ -7,13 +7,25 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 
-struct User: Decodable {
+struct User: Codable{
     let Uid: Int
     let Account: String
     let Password: String
     let UserName: String
     let Email: String
     let Gender: Int
+    
+    init(_ json: JSON){
+        
+        self.Uid = json["Uid"].intValue
+        self.Account = json["Account"].stringValue
+        self.Password = json["Password"].stringValue
+        self.UserName = json["UserName"].stringValue
+        self.Email = json["Email"].stringValue
+        self.Gender = json["Gender"].intValue
+        
+    }
 }

@@ -56,7 +56,7 @@
                                             <color key="titleColor" red="0.58443337679999996" green="0.59199362990000004" blue="0.60000169280000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
                                         <connections>
-                                            <action selector="pressSignUP:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sJb-Yr-dp1"/>
+                                            <action selector="pressSignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TQp-ky-aUr"/>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="w2Z-5d-ay5">
@@ -108,7 +108,7 @@
                                     <color key="titleColor" red="0.58443337679999996" green="0.59199362990000004" blue="0.60000169280000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
-                                    <action selector="pressSignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tgc-1z-rtk"/>
+                                    <action selector="pressSignUP:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uAH-l5-RLM"/>
                                 </connections>
                             </button>
                         </subviews>

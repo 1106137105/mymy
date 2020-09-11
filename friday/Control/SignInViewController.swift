@@ -7,79 +7,52 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class SignInViewController: UIViewController {
 
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var usernameTextField: UITextField!
     
-    let alertService = AlertService()
-    let networkingService = NetworkingService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     @IBAction func pressSignUP(_ sender: Any) {
-        guard
-            let Account = usernameTextField.text,
-            let Password = passwordTextField.text
-            else{return}
-        print(Account)
-        print(Password)
-        jsonRequest(Account: Account, Password: Password)
-            }
             
-            func formDataRequest(Account: String, Password: String) {
-                let parameters = ["Account": Account,
-                                  "Password": Password]
-                
-                  networkingService.request(endpoint: "/Login", parameters: parameters) { [weak self] (result) in
-                    
-                    switch result {
-                        
-                    case .success(let user): self?.performSegue(withIdentifier: "goToForum", sender: user)
-                        
-                    case.failure(let error):
-                        
-                        guard let alert = self?.alertService.alert(message: error.localizedDescription) else { return }
-                        self?.present(alert, animated: true)
-                    }
-                }
-            }
             
-            func jsonRequest(Account:String, Password: String) {
-                
-                let login = Login(Account: Account, Password: Password)
-                
-                networkingService.request(endpoint: "/Login", loginObject: login) { [weak self] (result) in
-                    
-                    switch result {
-                        
-                    case .success(let user): self?.performSegue(withIdentifier: "goToForum", sender: user)
-                        
-                    case.failure(let error):
-                        
-                        guard let alert = self?.alertService.alert(message: error.localizedDescription) else { return }
-                        self?.present(alert, animated: true)
-                    }
-                }
-            }
-            
-            override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-                
-                if let mainAppVC = segue.destination as? ForumViewController, let user = sender as? User {
-                    
-                    mainAppVC.user = user
-                }
-            }
+    }
 
     @IBAction func pressSignIn(_ sender: Any) {
-        self.performSegue(withIdentifier: "gotoSignUp", sender: self)
-    
+        let login = Login(Account: usernameTextField.text!, Password: passwordTextField.text!)
+        AF.request("http://nkust.cf:3000/nkust/Login",
+               method: .post,
+               parameters: login,
+               encoder: JSONParameterEncoder.default).responseJSON { response in
+               debugPrint(response)
+                switch response.result {
+                case .success(let value):
+                    print(value)
+                    let json = JSON(value)
+                    let user = User(json)
+                    self.performSegue(withIdentifier: "goToForum", sender: user)
+                case let .failure(error):
+                    print(error)
+                }
+        }
+            
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let mainAppVC = segue.destination as? ForumViewController, let user = sender as? User {
+            
+            mainAppVC.user = user
+        }
     }
 }
-        
+
     /*
     // MARK: - Navigation
 
