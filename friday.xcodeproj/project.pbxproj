@@ -23,6 +23,7 @@
 		8B3AB18A25023CAC00D4AF9B /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3AB18925023CAC00D4AF9B /* Login.swift */; };
 		8B3AB18C25023E0300D4AF9B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3AB18B25023E0300D4AF9B /* User.swift */; };
 		8B3AB18E250250CB00D4AF9B /* ForumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3AB18D250250CB00D4AF9B /* ForumViewController.swift */; };
+		8B65B0F9250B631E004CC5E5 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B65B0F8250B631E004CC5E5 /* SignUp.swift */; };
 		8B9FBC3924FF83C10091137E /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9FBC3824FF83C10091137E /* SignInViewController.swift */; };
 		8B9FBC3D24FF8E5F0091137E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9FBC3C24FF8E5F0091137E /* SignUpViewController.swift */; };
 		ECDC5026C5E5B363133C58D3 /* Pods_fridayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D5F5AD2C9A702187D42D7F4 /* Pods_fridayTests.framework */; };
@@ -71,6 +72,7 @@
 		8B3AB18925023CAC00D4AF9B /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		8B3AB18B25023E0300D4AF9B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8B3AB18D250250CB00D4AF9B /* ForumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForumViewController.swift; sourceTree = "<group>"; };
+		8B65B0F8250B631E004CC5E5 /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		8B9FBC3824FF83C10091137E /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		8B9FBC3C24FF8E5F0091137E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		A6E4BE3A45150F7BE02CB485 /* Pods-friday-fridayUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-friday-fridayUITests.debug.xcconfig"; path = "Target Support Files/Pods-friday-fridayUITests/Pods-friday-fridayUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				8B3AB18725023C6A00D4AF9B /* ErrorResponse.swift */,
 				8B3AB18525023C1200D4AF9B /* NetworkingService.swift */,
 				8B3AB18325023B7B00D4AF9B /* AlertService.swift */,
+				8B65B0F8250B631E004CC5E5 /* SignUp.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -448,6 +451,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DA1E39A24FA4A0700E139BB /* ViewController.swift in Sources */,
+				8B65B0F9250B631E004CC5E5 /* SignUp.swift in Sources */,
 				8B3AB18A25023CAC00D4AF9B /* Login.swift in Sources */,
 				8B9FBC3D24FF8E5F0091137E /* SignUpViewController.swift in Sources */,
 				8B3AB18425023B7B00D4AF9B /* AlertService.swift in Sources */,

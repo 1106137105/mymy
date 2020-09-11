@@ -7,27 +7,34 @@
 //
 
 import UIKit
+import Alamofire
 
 class SignUpViewController: UIViewController {
 
+    @IBOutlet weak var accountTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var genderTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
     }
-    @IBAction func pressSignin(_ sender: Any) {
+    @IBAction func pressSignUp(_ sender: Any) {
+        let signup = SignUp(Account: accountTextField.text!, Password: passwordTextField.text!,UserName: usernameTextField.text!,Email: emailTextField.text!,Gender: Int(genderTextField.text!) ?? 1)
+               AF.request("http://nkust.cf:3000/nkust/Register",
+                      method: .post,
+                      parameters: signup,
+                      encoder: JSONParameterEncoder.default).responseString { response in
+                      debugPrint(response)
+                       switch response.result {
+                       case .success(let value):
+                           print(value)
+                       case let .failure(error):
+                           print(error)
+                       }
+               }
+        
+    }
     
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

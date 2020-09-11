@@ -21,8 +21,7 @@ class SignInViewController: UIViewController {
     }
     
     @IBAction func pressSignUP(_ sender: Any) {
-            
-            
+        self.performSegue(withIdentifier: "gotoSignUp", sender: self)
     }
 
     @IBAction func pressSignIn(_ sender: Any) {
@@ -47,7 +46,6 @@ class SignInViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if let mainAppVC = segue.destination as? ForumViewController, let user = sender as? User {
-            
             mainAppVC.user = user
         }
     }
