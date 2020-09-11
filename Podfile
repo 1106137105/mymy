@@ -5,7 +5,9 @@ target 'friday' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
   pod 'BATabBarController', '~> 2.0.0'
-  # Pods for friday
+  pod 'Alamofire', '~> 5.2'
+  pod 'SwiftyJSON', '~> 4.0'  
+# Pods for friday
 
   target 'fridayTests' do
     inherit! :search_paths
