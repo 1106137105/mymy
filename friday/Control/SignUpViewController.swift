@@ -30,6 +30,7 @@ class SignUpViewController: UIViewController {
                        switch response.result {
                        case .success(let value):
                            print(value)
+                           _ = self.navigationController?.popViewController(animated: true)
                        case let .failure(error):
                            print(error)
                        }
