@@ -7,7 +7,12 @@ target 'friday' do
   pod 'BATabBarController', '~> 2.0.0'
   pod 'Alamofire', '~> 5.2'
   pod 'SwiftyJSON', '~> 4.0'  
+  
+
 # Pods for friday
+  pod 'CardSlider'
+  pod "ViewAnimator"
+  pod 'Hero'
 
   target 'fridayTests' do
     inherit! :search_paths

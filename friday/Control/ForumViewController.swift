@@ -17,7 +17,7 @@ class ForumViewController: UIViewController {
         super.viewDidLoad()
         if let name = user?.UserName {
             
-            labelText.text = "\(name.capitalized)"
+//            labelText.text = "\(name.capitalized)"
         }
     }
     

@@ -1,5 +1,8 @@
 
 import UIKit
+import CardSlider
+
+
 
 class ViewController: UIViewController {
     

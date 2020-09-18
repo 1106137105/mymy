@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D8AFA282514EE570016AB39 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8AFA272514EE570016AB39 /* HomeViewController.swift */; };
 		2DA1E39624FA4A0700E139BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA1E39524FA4A0700E139BB /* AppDelegate.swift */; };
 		2DA1E39824FA4A0700E139BB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA1E39724FA4A0700E139BB /* SceneDelegate.swift */; };
 		2DA1E39A24FA4A0700E139BB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA1E39924FA4A0700E139BB /* ViewController.swift */; };
@@ -15,6 +16,7 @@
 		2DA1E3A224FA4A0900E139BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DA1E3A024FA4A0900E139BB /* LaunchScreen.storyboard */; };
 		2DA1E3AD24FA4A0900E139BB /* fridayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA1E3AC24FA4A0900E139BB /* fridayTests.swift */; };
 		2DA1E3B824FA4A0900E139BB /* fridayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA1E3B724FA4A0900E139BB /* fridayUITests.swift */; };
+		2DC46BF12513B519001F1B13 /* ClassesIntroductionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC46BF02513B519001F1B13 /* ClassesIntroductionView.swift */; };
 		412234890705B70B623F4FBB /* Pods_friday_fridayUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89F3BCCF21292CB228BE7B37 /* Pods_friday_fridayUITests.framework */; };
 		54ED43ACD286B1082CC48115 /* Pods_friday.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9764A54974088E24F98DF7C /* Pods_friday.framework */; };
 		8B3AB18425023B7B00D4AF9B /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3AB18325023B7B00D4AF9B /* AlertService.swift */; };
@@ -47,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2D8AFA272514EE570016AB39 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2DA1E39224FA4A0700E139BB /* friday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = friday.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DA1E39524FA4A0700E139BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2DA1E39724FA4A0700E139BB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +64,7 @@
 		2DA1E3B324FA4A0900E139BB /* fridayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fridayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DA1E3B724FA4A0900E139BB /* fridayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fridayUITests.swift; sourceTree = "<group>"; };
 		2DA1E3B924FA4A0900E139BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2DC46BF02513B519001F1B13 /* ClassesIntroductionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassesIntroductionView.swift; sourceTree = "<group>"; };
 		3D18EEA398479B53C3FD16FA /* Pods-friday-fridayUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-friday-fridayUITests.release.xcconfig"; path = "Target Support Files/Pods-friday-fridayUITests/Pods-friday-fridayUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6871CBCCF253318330BDDBEB /* Pods-fridayTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fridayTests.release.xcconfig"; path = "Target Support Files/Pods-fridayTests/Pods-fridayTests.release.xcconfig"; sourceTree = "<group>"; };
 		6AEB69073AFB110E3F68F45E /* Pods-friday.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-friday.debug.xcconfig"; path = "Target Support Files/Pods-friday/Pods-friday.debug.xcconfig"; sourceTree = "<group>"; };
@@ -184,6 +188,8 @@
 				8B9FBC3824FF83C10091137E /* SignInViewController.swift */,
 				8B9FBC3C24FF8E5F0091137E /* SignUpViewController.swift */,
 				8B3AB18D250250CB00D4AF9B /* ForumViewController.swift */,
+				2DC46BF02513B519001F1B13 /* ClassesIntroductionView.swift */,
+				2D8AFA272514EE570016AB39 /* HomeViewController.swift */,
 			);
 			path = Control;
 			sourceTree = "<group>";
@@ -455,11 +461,13 @@
 				8B3AB18A25023CAC00D4AF9B /* Login.swift in Sources */,
 				8B9FBC3D24FF8E5F0091137E /* SignUpViewController.swift in Sources */,
 				8B3AB18425023B7B00D4AF9B /* AlertService.swift in Sources */,
+				2D8AFA282514EE570016AB39 /* HomeViewController.swift in Sources */,
 				8B3AB18625023C1200D4AF9B /* NetworkingService.swift in Sources */,
 				2DA1E39624FA4A0700E139BB /* AppDelegate.swift in Sources */,
 				8B3AB18825023C6A00D4AF9B /* ErrorResponse.swift in Sources */,
 				8B3AB18E250250CB00D4AF9B /* ForumViewController.swift in Sources */,
 				2DA1E39824FA4A0700E139BB /* SceneDelegate.swift in Sources */,
+				2DC46BF12513B519001F1B13 /* ClassesIntroductionView.swift in Sources */,
 				8B9FBC3924FF83C10091137E /* SignInViewController.swift in Sources */,
 				8B3AB18C25023E0300D4AF9B /* User.swift in Sources */,
 			);
