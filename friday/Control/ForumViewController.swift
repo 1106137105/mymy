@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ForumViewController: UIViewController {
+class ForumViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
     @IBOutlet weak var labelText: UILabel!
     @IBOutlet weak var tableView: UITableView!
@@ -22,19 +22,24 @@ class ForumViewController: UIViewController {
         tableView.dataSource = self
         self.navigationItem.setHidesBackButton(true, animated: true)
     }
-
-}
-
-extension ForumViewController: UITableViewDelegate{
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let controller = segue.destination as? PostDetailViewController
+        let indexPath = self.tableView.indexPathForSelectedRow
+        
+        controller?.titleText = article?[indexPath!.row].Title
+        controller?.contentText  = article?[indexPath!.row].Content
+    }
+    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         print("you tap me")
+        print(article?[indexPath.row].Title)
+        
         
     }
-}
-
-extension ForumViewController: UITableViewDataSource{
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? PostTableViewCell
         else{
@@ -43,12 +48,15 @@ extension ForumViewController: UITableViewDataSource{
         
         cell.titleLable.text = article?[indexPath.row].Title
         cell.contentLable.text = article?[indexPath.row].Content
+        
         return cell
     }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return article!.count 
+        return article!.count
     }
+
 }
+
 

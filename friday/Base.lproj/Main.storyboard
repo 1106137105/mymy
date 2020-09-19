@@ -453,7 +453,7 @@
                                         <connections>
                                             <outlet property="contentLable" destination="biu-nc-6Ux" id="J0E-hq-QWB"/>
                                             <outlet property="titleLable" destination="N56-yE-ReR" id="xeZ-In-cnb"/>
-                                            <segue destination="gch-9i-ZAO" kind="show" id="uyl-mn-ROU"/>
+                                            <segue destination="gch-9i-ZAO" kind="show" identifier="goToPostDetail" id="uyl-mn-ROU"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -495,7 +495,7 @@
         <!--dcardPostDetail-->
         <scene sceneID="pF7-z2-oZ9">
             <objects>
-                <viewController title="dcardPostDetail" id="gch-9i-ZAO" sceneMemberID="viewController">
+                <viewController title="dcardPostDetail" id="gch-9i-ZAO" customClass="PostDetailViewController" customModule="friday" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Cua-9l-qr0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -587,6 +587,10 @@
                         <viewLayoutGuide key="safeArea" id="Piy-f3-sas"/>
                     </view>
                     <navigationItem key="navigationItem" id="0jD-gx-NDk"/>
+                    <connections>
+                        <outlet property="contentLabel" destination="rVS-cU-DEa" id="kd9-Q7-tah"/>
+                        <outlet property="titleLabel" destination="T0w-gx-BqH" id="kv3-Wx-dcc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pMl-6D-wi3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
