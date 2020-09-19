@@ -30,13 +30,9 @@ class SignInViewController: UIViewController {
                method: .post,
                parameters: login,
                encoder: JSONParameterEncoder.default).responseJSON { response in
-               debugPrint(response)
                 switch response.result {
-                case .success(let value):
-                    print(value)
-                    let json = JSON(value)
-                    let user = User(json)
-                    self.performSegue(withIdentifier: "goToForum", sender: user)
+                case .success:
+                    self.getPost()
                 case let .failure(error):
                     print(error)
                 }
@@ -45,19 +41,30 @@ class SignInViewController: UIViewController {
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if let mainAppVC = segue.destination as? ForumViewController, let user = sender as? User {
-            mainAppVC.user = user
+        if let mainAppVC = segue.destination as? ForumViewController, let articles = sender as? [Article] {
+            mainAppVC.article = articles
         }
     }
+    
+    func getPost(){
+        AF.request("http://nkust.cf:3000/nkust/Posts",
+        method: .get).responseJSON { response in
+            switch response.result {
+                case .success(let value):
+                    let json = JSON(value)
+                    let list = json.arrayValue
+                    print(list)
+                    var articles = [Article]()
+                    for articleJson in list {
+                    let article = Article(articleJson)
+                    articles.append(article)
+                    }
+                self.performSegue(withIdentifier: "goToForum", sender: articles)
+                case let .failure(error):
+                    print(error)
+                }
+            
+        }
 }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+}

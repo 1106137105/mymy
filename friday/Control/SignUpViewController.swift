@@ -18,6 +18,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var genderTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+         self.navigationItem.setHidesBackButton(true, animated: true)
         
     }
     @IBAction func pressSignUp(_ sender: Any) {
@@ -38,4 +39,7 @@ class SignUpViewController: UIViewController {
         
     }
     
+    @IBAction func pressGoBack(_ sender: Any) {
+       _ = self.navigationController?.popViewController(animated: true)
+    }
 }

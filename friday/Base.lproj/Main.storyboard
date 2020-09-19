@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mav-GA-2FK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mav-GA-2FK">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -11,7 +11,7 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="signin_VC" id="BYZ-38-t0r" userLabel="signIn" customClass="SignInViewController" customModule="friday" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="SignInVi">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -265,6 +265,9 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <state key="normal" title="Already got account? Sign in!"/>
+                                        <connections>
+                                            <action selector="pressGoBack:" destination="WDj-Jf-bFk" eventType="touchUpInside" id="hqb-cy-ugt"/>
+                                        </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="person.2.square.stack" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="dpr-S6-03Z">
                                         <rect key="frame" x="26" y="406" width="33" height="35"/>
@@ -304,7 +307,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCell" rowHeight="174" id="tRN-WA-5n5" customClass="PostTableViewCell" customModule="friday" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="174" id="tRN-WA-5n5" customClass="PostTableViewCell" customModule="friday" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="174"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tRN-WA-5n5" id="km5-08-uG7">
@@ -443,16 +446,13 @@
                                                 <constraint firstAttribute="trailing" secondItem="TeF-Rz-o9s" secondAttribute="trailing" constant="10" id="jld-Ns-jMQ"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <outlet property="commentCountLabel" destination="VLk-jO-9nt" id="4l3-Le-JFU"/>
-                                            <outlet property="excerptLabel" destination="biu-nc-6Ux" id="8Kh-r8-bPx"/>
-                                            <outlet property="forumNameLabel" destination="K9P-GM-08b" id="jqw-Z0-nhh"/>
-                                            <outlet property="genderImage" destination="snd-tb-ih6" id="aBb-a8-384"/>
-                                            <outlet property="likeCountImage" destination="hPI-fm-kbM" id="ecX-0m-gJz"/>
-                                            <outlet property="likeCountLabel" destination="3Lp-7q-zOK" id="YSs-B9-D6D"/>
-                                            <outlet property="postImage" destination="J2P-M2-D8k" id="IvK-Ty-Cvj"/>
-                                            <outlet property="schoolLabel" destination="EZy-M4-jLv" id="1ZV-zn-9pS"/>
-                                            <outlet property="titleLabel" destination="N56-yE-ReR" id="irG-46-yX9"/>
+                                            <outlet property="contentLable" destination="biu-nc-6Ux" id="J0E-hq-QWB"/>
+                                            <outlet property="titleLable" destination="N56-yE-ReR" id="xeZ-In-cnb"/>
                                             <segue destination="gch-9i-ZAO" kind="show" id="uyl-mn-ROU"/>
                                         </connections>
                                     </tableViewCell>
@@ -469,6 +469,9 @@
                         <viewLayoutGuide key="safeArea" id="6PR-QO-IC8"/>
                     </view>
                     <navigationItem key="navigationItem" leftItemsSupplementBackButton="YES" id="HcS-ac-5Re"/>
+                    <connections>
+                        <outlet property="tableView" destination="sH6-SU-fdG" id="9uU-LK-AdF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BjL-7P-JsT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -727,7 +730,6 @@
         <!--Hope View Controller-->
         <scene sceneID="ey2-e8-lQ3">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0g3-qY-NaM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="VhJ-EA-CeL" customClass="HopeViewController" customModule="friday" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Rpq-R7-Gyt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -737,6 +739,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="iGM-gn-bhA"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0g3-qY-NaM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1309" y="-244"/>
         </scene>

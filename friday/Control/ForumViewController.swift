@@ -11,25 +11,44 @@ import UIKit
 class ForumViewController: UIViewController {
 
     @IBOutlet weak var labelText: UILabel!
-     var user: User?
+    @IBOutlet weak var tableView: UITableView!
+    var user: User?
+    var article: [Article]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let name = user?.UserName {
-            
-//            labelText.text = "\(name.capitalized)"
-        }
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        self.navigationItem.setHidesBackButton(true, animated: true)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
+
+extension ForumViewController: UITableViewDelegate{
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        print("you tap me")
+        
+    }
+}
+
+extension ForumViewController: UITableViewDataSource{
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? PostTableViewCell
+        else{
+            return UITableViewCell()
+        }
+        
+        cell.titleLable.text = article?[indexPath.row].Title
+        cell.contentLable.text = article?[indexPath.row].Content
+        return cell
+    }
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return article!.count 
+    }
+}
+
