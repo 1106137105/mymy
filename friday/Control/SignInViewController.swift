@@ -15,6 +15,7 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var usernameTextField: UITextField!
     
+    let alertService = AlertService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,11 +34,15 @@ class SignInViewController: UIViewController {
                 switch response.result {
                 case .success:
                     self.getPost()
-                case let .failure(error):
-                    print(error)
+                case let .failure(_):
+                    self.alertService.showAlert(with: "Hello", message: "world", on: self)
                 }
         }
             
+    }
+    
+    @objc func dismissAlert(){
+        alertService.dismissAlert()
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
