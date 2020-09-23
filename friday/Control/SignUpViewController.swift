@@ -18,8 +18,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var genderTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-         self.navigationItem.setHidesBackButton(true, animated: true)
-        
+         self.navigationItem.setHidesBackButton(true, animated: true)        
     }
     @IBAction func pressSignUp(_ sender: Any) {
         let signup = SignUp(Account: accountTextField.text!, Password: passwordTextField.text!,UserName: usernameTextField.text!,Email: emailTextField.text!,Gender: Int(genderTextField.text!) ?? 1)

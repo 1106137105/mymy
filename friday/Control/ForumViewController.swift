@@ -12,7 +12,6 @@ class ForumViewController: UIViewController,UITableViewDelegate,UITableViewDataS
 
     @IBOutlet weak var labelText: UILabel!
     @IBOutlet weak var tableView: UITableView!
-    var user: User?
     var article: [Article]?
     
     override func viewDidLoad() {
@@ -21,6 +20,8 @@ class ForumViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         tableView.delegate = self
         tableView.dataSource = self
         self.navigationItem.setHidesBackButton(true, animated: true)
+        let userUid = UserDefaults.standard.getUserId()
+        print(userUid)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

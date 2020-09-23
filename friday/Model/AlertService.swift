@@ -53,13 +53,13 @@ class AlertService {
         
         messageLabel.numberOfLines = 0
         messageLabel.text = message
-        messageLabel.textAlignment = .left
+        messageLabel.textAlignment = .center
         alertView.addSubview(messageLabel)
         
         let button = UIButton(frame: CGRect(x: 0, y: alertView.frame.size.height-50, width: alertView.frame.size.width, height: 50))
         
         
-        button.setTitle("Dismiss", for: .normal)
+        button.setTitle("關閉", for: .normal)
         button.setTitleColor(.link, for: .normal)
         button.addTarget(self, action: #selector(dismissAlert), for: .touchUpInside)
         alertView.addSubview(button)
@@ -95,18 +95,6 @@ class AlertService {
                 })
             }
         })
-    }
-    
-    
-    func alert(message: String) -> UIAlertController {
-        
-        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
-        
-        let action = UIAlertAction(title: "Dismiss", style: .cancel, handler: nil)
-        
-        alert.addAction(action)
-        
-        return alert
     }
     
 }

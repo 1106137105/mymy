@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class SignInViewController: UIViewController {
+class SignInViewController: UIViewController{
 
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var usernameTextField: UITextField!
@@ -32,10 +32,13 @@ class SignInViewController: UIViewController {
                parameters: login,
                encoder: JSONParameterEncoder.default).responseJSON { response in
                 switch response.result {
-                case .success:
+                case .success(let value):
+                    let json = JSON(value)
+                    let number = json["Uid"].intValue
+                    UserDefaults.standard.setUserId(number)
                     self.getPost()
-                case let .failure(_):
-                    self.alertService.showAlert(with: "Hello", message: "world", on: self)
+                case .failure(_):
+                    self.alertService.showAlert(with: "錯誤", message: "帳號或密碼錯誤哦請再檢查一次", on: self)
                 }
         }
             
